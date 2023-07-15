@@ -1,0 +1,19 @@
+-- CreateTable
+CREATE TABLE "Lote" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "nome" TEXT NOT NULL,
+    "ativo" BOOLEAN NOT NULL,
+    "criadoEm" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+-- CreateTable
+CREATE TABLE "Boletos" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "nomeSacado" TEXT NOT NULL,
+    "idLote" INTEGER NOT NULL,
+    "valor" REAL NOT NULL,
+    "linhaDigitavel" TEXT NOT NULL,
+    "ativo" BOOLEAN NOT NULL,
+    "criadoEm" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT "Boletos_idLote_fkey" FOREIGN KEY ("idLote") REFERENCES "Lote" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);

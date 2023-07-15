@@ -1,0 +1,38 @@
+{
+  "name": "sistema-boletos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compose:build": "docker-compose up --build",
+    "compose:start": "docker-compose up",
+    "start:dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrate": "npx prisma migrate dev",
+    "studio": "npx prisma studio"
+  },
+  "prisma": {
+    "schema": "api/config/prisma/schema.prisma"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.0.0",
+    "cors": "^2.8.5",
+    "csv-parser": "^3.0.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-fileupload": "^1.4.0",
+    "multer": "^1.4.5-lts.1",
+    "pdf-parse": "^1.1.1",
+    "prisma": "^5.0.0"
+  },
+  "devDependencies": {
+    "babel-plugin-import-inspector": "^2.0.0",
+    "babel-plugin-module-resolver": "^5.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsdoc": "^46.4.3",
+    "nodemon": "^3.0.1"
+  }
+}
